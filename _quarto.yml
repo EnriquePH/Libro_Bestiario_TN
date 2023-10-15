@@ -4,7 +4,9 @@ project:
 book:
   title: Bestiario de Teoría de Números
   author: Enrique Pérez Herrero
-  date: "15/10/2023"
+  cover-image: book/img/cover.png
+  repo-url: https://github.com/EnriquePH/Libro_Bestiario_TN
+  date: "10/15/2023"
   chapters:
     - index.qmd
     - book/00-Intro/intro.qmd
@@ -23,4 +25,6 @@ format:
 crossref:
   tbl-title: Tabla
   fig-title: Figura
+  eq-title: Ecuación
+  eq-prefix: Ecuación
 
