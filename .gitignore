@@ -1,0 +1,9 @@
+# Bestiario .gitignore
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+aux/
+**/*.ipynb_checkpoints/
+
+/.quarto/
