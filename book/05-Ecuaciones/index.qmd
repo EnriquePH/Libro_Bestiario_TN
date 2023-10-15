@@ -1,0 +1,83 @@
+---
+title: "Ecuaciones entre funciones aritméticas"
+---
+
+```{r echo=FALSE}
+library(latex2exp)
+library(knitr)
+```
+
+Este tipo de problemas de _Teoría de Números_ proporciona una nueva perspectiva
+del conjunto imagen de las funciones aritméticas. Para buscar, las propiedades
+que presenta el conjunto solución, se debe emplear todo tipo de herramientas
+matemáticas: desde elementales, numéricas y analíticas. La mayoría de estos
+problemas han sido estudiados ampliamente durante décadas, y existen numerosas referencias bibliográficas a los mismos. Aunque, por otro lado, no
+es nada difícil enunciar problemas originales de los que no existe
+documentación alguna.
+
+El análisis de las ecuaciones que involucran funciones aritméticas conlleva la exploración de las propiedades de las secuencias de números enteros que conforman el conjunto de soluciones a estas ecuaciones.
+
+## Conjunto solución de una ecuación entre funciones aritméticas
+
+::: {.definition #conjsoleq name="Conjunto Solución de una ecuación entre dos
+funciones aritméticas f(n) y g(n)"}
+<!-- (#eq:conjsoleq1) -->
+
+\begin{multline} 
+\mathcal{S} = \{n \in \mathbb{N^*} \mid g(n)=f(n)\}
+\end{multline}
+
+:::
+
+
+## Ecuación $\varphi(n) = \varphi(n + k)$
+<!-- (#eq:conjphiphi1) -->
+
+\begin{multline} 
+\mathcal{S}_{k} = \{n \in \mathbb{N^*} \mid \varphi(n)=\varphi(n+k)\}
+\end{multline}
+
+```{r echo=FALSE}
+FILE_PATH_TABLA_06_02 <- '../code/tablas/tabla_06_02.Rda'
+knitr::kable(x = readRDS(FILE_PATH_TABLA_06_02),
+             row.names = FALSE,
+             align = c('c', 'c', 'c', 'l')
+             )
+```
+
+
+## Ecuación $\varphi(n) = k$
+
+
+## Ecuación $\varphi(n) = k \cdot \tau(n)$
+
+
+```{r echo=FALSE}
+FILE_PATH_TABLA_06_04a <- '../code/tablas/tabla_06_04a.Rda'
+knitr::kable(x = readRDS(FILE_PATH_TABLA_06_04a),
+             row.names = FALSE,
+             align = c('c', 'c', 'c', 'l')
+             )
+```
+
+### Conjunto solución
+<!-- (#eq:conjphiktau1) -->
+
+\begin{multline}
+\mathcal{S}_{k} = \{n \in \mathbb{N^*} \mid \varphi(n)= k \cdot \tau(n)\}
+\end{multline}
+
+## Ecuación $\varphi(n) = {\tau(n)}^{k}$
+
+
+```{r echo=FALSE}
+#| label: tbl-cotbl-title:njphiktau1
+#| tbl-cap: Ecuación $\varphi(n) = {\tau(n)}^{k}$
+FILE_PATH_TABLA_06_05 <- '../code/tablas/tabla_06_05.Rda'
+knitr::kable(x = readRDS(FILE_PATH_TABLA_06_05),
+             row.names = FALSE,
+             align = c('c', 'c', 'c', 'l')
+             )
+```
+
+

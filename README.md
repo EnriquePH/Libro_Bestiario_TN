@@ -1,6 +1,6 @@
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/EnriquePH/Libro_Bestiario_Mates/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/EnriquePH/Libro_Bestiario_Mates/actions/workflows/R-CMD-check.yaml) ![](https://ci.appveyor.com/api/projects/status/github/EnriquePH/Libro_Bestiario_Mates?svg=true) ![License](https://img.shields.io/:license-mit-blue.svg)
+![License](https://img.shields.io/:license-mit-blue.svg)
 
 <!-- badges: end -->
 

@@ -1,0 +1,26 @@
+---
+title: "Trig"
+author: "Enrique Pérez Herrero"
+date: '`r Sys.Date()`'
+output: html_document
+---
+
+```{r}
+cos_k <- function(angle_rad, k_order) {
+  sign(cos(angle_rad)) * (1 - x ^ k_order) ^ (1 / k_order)
+}
+
+
+sin_k <- function(angle_rad, k_order){
+  sign(sign(angle_rad)) * (x ^ k_order) ^ (1 / k_order)
+}
+```
+
+
+```{r}
+t <- seq(0, 2* pi, 0.1)
+k <- 5
+x <- sin_k(x, k)
+y <- cos_k(x, k)
+plot(t, y, type='l')
+```
