@@ -1,0 +1,234 @@
+# FUNCIONES ARITMETICAS
+
+Revisando la bibliografía sobre _Teoría de Números_, es difícil encontrar una definición sobre lo que es una _función aritmética_ que no sea vaga y difusa.
+Algunos autores las denominan, también, funciones de la Teoría de Números.
+
+
+Por ejemplo para [@apostol1998introduction], una función aritmética es:
+
+| _Una función real o compleja definida sobre los enteros positivos._
+
+En [@hardy2008introduction] se considera que:
+
+_Son funciones $f(n)$ de un entero positivo definidas de cierta forma que expresen ciertas propiedades aritméticas de $n$_
+
+En [@cilleruelo1992], las funciones aritméticas son:
+
+_Ciertas funciones definidas sobre los naturales... reales o complejas_
+
+En otros casos como el de [@vinogradov1977introduction], no se da una definición y, simplemente, se las denomina:
+
+ _"las funciones más importantes de la Teoría de Números"_
+
+
+
+### Definición
+
+### Tipos de funciones aritméticas
+
+### Propiedades
+
+### Funciones clásicas
+
+## Convolución recursiva de Dirichlet
+
+### Funciones de Piltz
+
+\begin{multline}
+\tau_{k}(n)=\sum_{d|n}{\tau_{k-1}(d)}
+(\#eq:piltz1)
+\end{multline}
+
+\begin{multline}
+\tau_{k}(n)=\prod_{i=1}^{\omega(n)}{\prod_{j=1}^{k-1}\frac{\alpha_{i}+j}{j}}=
+\prod_{i=1}^{\omega(n)}{\binom{\alpha_{i}+k-1}{k-1}}; \; (k \ge 1)
+(\#eq:piltz2)
+\end{multline}
+
+Si $s$ es un número libre de factor cuadrado, véase secuencia
+[A005117](https://oeis.org/A005117):
+
+\begin{multline}
+\tau_{k}(s)= \prod_{i=1}^{\omega(s)}{\binom{k}{k-1}=k^{\omega(s)}}
+(\#eq:piltz3)
+\end{multline}
+
+\begin{multline}
+\tau_{k+1}(n^k)=\tau_{k}(n^k)\cdot \tau_2(n); \; (k \ge 0)
+(\#eq:piltz4)
+\end{multline}
+
+Secuencia [A097988](https://oeis.org/A097988)
+
+\begin{multline}
+\tau_{3}(n)^{2}=\left( \sum_{d|n}{\tau_{2}(d)} \right)^{2}
+(\#eq:piltz5)
+\end{multline}
+
+
+La función $rad(n)$ se denomina el radical de $n$ y es el producto de los
+números primos que dividen a $n$. [A007947](https://oeis.org/A007947):
+
+\begin{multline}
+\tau_{k}(n)=\prod_{i=0}^{k-2}{\frac{ \tau_{2}(n\cdot rad(n)^{i}) }{ \tau_{2}(rad(n)^{i})}} ; \; (k \ge 1)
+(\#eq:piltz6)
+\end{multline}
+
+Secuencia [A076479](https://oeis.org/A076479)
+
+\begin{multline}
+\sum_{d|n}{\mu(d)\cdot\tau_{2}(d)}=
+(-1)^{\omega(n)}=\mu(rad(n))
+(\#eq:piltz7)
+\end{multline}
+
+\begin{multline}
+\sum_{d|n}{{\mu(d)}^{2}\cdot{\tau_{2}(d)}^{k}}=
+\tau_k(rad(n))=\bigg({2^{k}+1}\bigg)^{\omega(n)}
+(\#eq:piltz8)
+\end{multline}
+
+Secuencia [A082476](https://oeis.org/A082476)
+\begin{multline}
+|\sum_{d|n}{\mu(d)\cdot\tau_{3}(d^{2})}|= \sum_{d|n}{{\mu(d)}^{2}\cdot{\tau_{2}(d)}^{2}}=
+\tau_{5}(rad(n))=5^{\omega(n)}
+(\#eq:piltz9)
+\end{multline}
+
+Secuencia [A010553](https://oeis.org/A010553)
+\begin{multline}
+\tau_{2}(\tau_{2}(rad(n)))-1=\omega(n) \; ; \; (n > 1)
+(\#eq:piltz10)
+\end{multline}
+
+
+Secuencia [A074816](https://oeis.org/A074816)
+\begin{multline}
+\sum_{d|n}{ \mu(d)^{2} \cdot \tau_{2}(d) } =
+|\sum_{d|n}{ \mu(d) \cdot \tau_{2}(d^3) }| =
+|\sum_{d|n}{ \mu(d) \cdot \tau_{4}(d) }| =
+\tau_{3}(rad(n)) =
+3^{\omega(n)}
+(\#eq:piltz11)
+\end{multline}
+
+
+\begin{multline}
+|\sum_{d|n}{\mu(d)\cdot\tau_{k}(d^{m})}|=
+{\bigg(\binom{k+m-1}{m}-1 \bigg)}^{\omega(n)}
+(\#eq:piltz12)
+\end{multline}
+
+\begin{multline}
+\sum_{d|n}{\mu(d)\cdot\tau_{k}(d^{m})}=
+{\bigg(1-\binom{k+m-1}{m}\bigg) }^{\omega(n)}
+(\#eq:piltz13)
+\end{multline}
+
+Secuencia [A000010](https://oeis.org/A000010)
+\begin{multline}
+\phi(n)=\sum_{i=1}^{n}{\bigg\lfloor \frac{\tau_{k}(i\cdot n)}{\tau_{k}(i)\cdot \tau_{k}(n)} \bigg\rfloor}
+(\#eq:piltz14)
+\end{multline}
+
+
+Secuencia [A000720](https://oeis.org/A000720)
+\begin{multline}
+\pi(n)=
+\sum_{i=2}^{n}{\bigg\lfloor \frac{k}{\tau_{k}(i)}\bigg\rfloor}
+\;\; ;(n>1)
+(\#eq:piltz15)
+\end{multline}
+
+Función de los divisores unitarios secuencia [A034444](https://oeis.org/A034444)
+\begin{multline}
+\sigma_{0}^{*}(n)=
+|\sum_{d|n}{\mu(d)\cdot\tau_{3}(d)}|=
+\sum_{d|n}{{\mu(d)}^2}=
+\sum_{d|n}{\mu\bigg(\frac{n}{d}\bigg)\cdot\tau_{2}(d^{2})}=
+\sum_{d|n}{{\mu(d)}^2\cdot\tau_{2}(d^{2})}
+(\#eq:piltz16)
+\end{multline}
+
+
+\begin{multline}
+\tau_{k}(p^{\alpha})=
+\binom{\alpha+k-1}{k-1}=
+P_{k-1}^{ (\alpha,\beta) }(1) \; (k>1)
+(\#eq:piltz17)
+\end{multline}
+
+Dónde, $P_{n}^{ (\alpha,\beta) }(z)$ son los Polinomios de Jacobi
+
+\begin{multline}
+\sum_{d|n}{k^{\omega(n)}}=
+\tau_{2}(n^{k})
+(\#eq:piltz18)
+\end{multline}
+
+### Funciones de Jordan
+
+### Función Lambda de Liouville
+
+## Divisibilidad entre funciones aritméticas
+
+La divisibilidad entre distintas _funciones aritméticas_ crea unos conjuntos de
+números con propiedades especiales que originan una serie de problemas
+dignos de atención y que proporcionan una nueva perspectiva de las propiedades 
+de dichas funciones, y de su imagen.
+
+::: {.definition #conjdiv name="Conjunto de divisibilidad entre dos funciones
+aritméticas"}
+Se denomina _conjunto de divisibilidad_ $\mathcal{D}(f,g)$ entre las
+funciones aritméticas $f$ y $g$ al formado por los números $n \in \mathbb{N}$
+que cumplen que:
+
+\begin{multline} 
+n \in \mathcal{D}(f,g) \iff g(n) | f(n)
+(\#eq:conjuntodiv1)
+\end{multline}
+:::
+
+::: {.theorem #multconjdiv}
+Si $f$ y $g$ son dos _funciones aritméticas multiplicativas_ y si  $g(m)|f(n)$ y
+$g(m)|f(n)$, con $m \perp n$ entonces $g(n \cdot m) | f(n \cdot m)$ , y usando
+la notación de los conjuntos de divisibilidad:
+$n, m \in \mathcal{D}(f,g) \land n \perp m \Rightarrow n \cdot m \in \mathcal{D}(f,g)$
+:::
+
+::: {.corollary #unoconjdiv}
+Si $f$ y $g$ son dos _funciones aritméticas multiplicativas_:
+\begin{multline} 
+1 \in \mathcal{D}(f,g)
+(\#eq:unoconjdiv)
+\end{multline}
+:::
+
+::: {.definition #conjindiv name="Conjunto de indivisibilidad entre dos funciones
+aritméticas"}
+Se denomina _conjunto de indivisibilidad_ $\mathcal{N}(f,g)$ entre las
+funciones aritméticas $f$ y $g$ al formado por los números $n \in \mathbb{N}$
+que cumplen que:
+
+\begin{multline} 
+n \in \mathcal{N}(f,g) \iff g(n) \nmid f(n)
+(\#eq:conjuntoindiv1)
+\end{multline}
+:::
+
+::: {.corollary #divnodiv}
+Dadas dos funciones aritméticas $f$ y $g$, los conjuntos $\mathcal{D}(f,g)$ y $\mathcal{N}(f,g)$
+
+\begin{multline}
+\mathcal{D}(f,g) \cup \mathcal{N}(f,g) = \mathbb{N}
+\mathcal{D}(f,g) \cap \mathcal{N}(f,g) = \emptyset
+(\#eq:divnodiv)
+\end{multline}
+:::
+
+
+
+## Acotación de funciones aritméticas
+
+## Sumas finitas de funciones aritméticas
+
