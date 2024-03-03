@@ -1,6 +1,7 @@
-# FUNCIONES DE LA CIENCIA DE LA COMPUTACION
-
-
+---
+title: "FUNCIONES DE LA CIENCIA DE LA COMPUTACIÓN"
+editor: source
+---
 
 $$
 % Macros del usuario
