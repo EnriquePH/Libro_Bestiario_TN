@@ -10,7 +10,7 @@ book:
   chapters:
     - index.qmd
     - book/01-Intro/index.qmd
-    - book/02-Series/index.qmd
+    #- book/02-Series/index.qmd
     - book/04-Funciones/index.qmd
     - book/05-Ecuaciones/index.qmd
     - book/summary.qmd

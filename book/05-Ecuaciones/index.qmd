@@ -1,12 +1,17 @@
 ---
-title: "Ecuaciones entre funciones aritméticas"
+title: "ECUACIONES ENTRE FUNCIONES ARITMÉTICAS"
 editor: source
 ---
 
 ```{r echo=FALSE}
+# Packages
 library(latex2exp)
 library(knitr)
+
+# Parameters
+TAB_PATH <- '../doc/code/tablas/'
 ```
+
 
 Este tipo de problemas de *Teoría de Números* proporciona una nueva
 perspectiva del conjunto imagen de las funciones aritméticas. Para
@@ -47,7 +52,7 @@ $$
 $${#eq-conjphiphi1}
 
 ```{r echo=FALSE}
-FILE_PATH_TABLA_06_02 <- '../code/tablas/tabla_06_02.Rda'
+FILE_PATH_TABLA_06_02 <- paste0(TAB_PATH, 'tabla_06_02.Rda')
 knitr::kable(x = readRDS(FILE_PATH_TABLA_06_02),
              row.names = FALSE,
              align = c('c', 'c', 'c', 'l')
@@ -59,7 +64,7 @@ knitr::kable(x = readRDS(FILE_PATH_TABLA_06_02),
 ## Ecuación $\varphi(n) = k \cdot \tau(n)$
 
 ```{r echo=FALSE}
-FILE_PATH_TABLA_06_04a <- '../code/tablas/tabla_06_04a.Rda'
+FILE_PATH_TABLA_06_04a <- paste0(TAB_PATH, 'tabla_06_04a.Rda')
 knitr::kable(x = readRDS(FILE_PATH_TABLA_06_04a),
              row.names = FALSE,
              align = c('c', 'c', 'c', 'l')
@@ -79,7 +84,7 @@ $${#eq-conjphiktau}
 ```{r echo=FALSE}
 #| label: tbl-cotbl-title:njphiktau1
 #| tbl-cap: Ecuación $\varphi(n) = {\tau(n)}^{k}$
-FILE_PATH_TABLA_06_05 <- '../code/tablas/tabla_06_05.Rda'
+FILE_PATH_TABLA_06_05 <- paste0(TAB_PATH, 'tabla_06_05.Rda')
 knitr::kable(x = readRDS(FILE_PATH_TABLA_06_05),
              row.names = FALSE,
              align = c('c', 'c', 'c', 'l')

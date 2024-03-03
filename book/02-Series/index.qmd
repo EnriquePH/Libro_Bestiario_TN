@@ -1,8 +1,14 @@
 ---
+title: "SERIES CONVERGENTES"
 editor: source
 ---
 
-# SERIES CONVERGENTES
+```{r echo=FALSE}
+# Packages
+
+# Parameters
+TAB_PATH <- '../doc/code/tablas/'
+```
 
 ::: content-hidden
 $$
@@ -15,7 +21,7 @@ En esta parte del libro <https://archive.siam.org/journals/problems/downloadfile
 ## Series que incluyen las funciones de parte entera.
 
 ```{r echo=FALSE}
-FILE_PATH_TABLA_02_01 <- '../code/tablas/tabla_02_01.Rda'
+FILE_PATH_TABLA_02_01 <- paste0(TAB_PATH, 'tabla_02_01.Rda')
 knitr::kable(x = readRDS(FILE_PATH_TABLA_02_01),
              row.names = FALSE,
              caption = 'Fracciones enteras de $n^2$')

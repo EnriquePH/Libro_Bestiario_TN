@@ -1,4 +1,7 @@
-# FUNCIONES ARITMETICAS
+---
+title: "FUNCIONES ARITMÉTICAS"
+editor: source
+---
 
 Revisando la bibliografía sobre _Teoría de Números_, es difícil encontrar una definición sobre lo que es una _función aritmética_ que no sea vaga y difusa.
 Algunos autores las denominan, también, funciones de la Teoría de Números.
