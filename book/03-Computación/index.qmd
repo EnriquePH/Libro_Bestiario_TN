@@ -3,6 +3,12 @@ title: "FUNCIONES DE LA CIENCIA DE LA COMPUTACIÓN"
 editor: source
 ---
 
+```{r echo=FALSE}
+# Packages
+library(ggplot2)
+library(ggthemes)
+```
+
 $$
 % Macros del usuario
 \renewcommand{\floor}[1] {\lfloor #1 \rfloor}
@@ -16,76 +22,71 @@ Suelo, Techo y Parte Fraccionaria.
 
 ### Propiedades
 
+$$
 \begin{multline}
 x =  \floor{x} + \fracpart{x}
-(\#eq:prop1)
 \end{multline}
-
+$$ {#eq-prop1}
 
 ### Integración
 
-Las funciones de redondeo de números enteros aparecen en muchos textos de
-matemáticas, pero entre la lista de sus propiedades es casi imposible encontrar
-nada sobre su integración.
+Las funciones de redondeo de números enteros aparecen en muchos textos de matemáticas, pero entre la lista de sus propiedades es casi imposible encontrar nada sobre su integración.
 
-A partir de su representación gráfica es sencillo, añadiendo o sustrayendo
-áreas, obtener expresiones de sus *integrales definidas*, para límites en el
-intervalo $[0, x]$.
-Para simplificar las fórmulas, se pueden emplear los *Números
-Triangulares*, secuencia [A000217](https://oeis.org/A000217)
+A partir de su representación gráfica es sencillo, añadiendo o sustrayendo áreas, obtener expresiones de sus *integrales definidas*, para límites en el intervalo $[0, x]$. Para simplificar las fórmulas, se pueden emplear los *Números Triangulares*, secuencia [A000217](https://oeis.org/A000217)
 
+$$
 \begin{multline}
 T(n)=\frac{n^{2}+n}{2}
-(\#eq:triang)
 \end{multline}
+$$ {#eq-triang}
 
 #### Integral definida de la función suelo
 
+$$
 \begin{multline}
 I_{1}(x) = 
 \int_0^{x}{\floor{t} dt} =
 \floor{x} \fracpart{x} + \frac{\floor{x}^2 - \floor{x}}{2} =
 \fracpart{x}\floor{x} + T(\floor{x} - 1)
-(\#eq:integralsuelo1)
 \end{multline}
+$$ {#eq-integralsuelo1}
 
 #### Integral definida de la función parte fraccionaria
 
+$$
 \begin{multline}
 I_{2}(x) = 
 \int_0^x \left\{{t}\right\} dt =
 \frac{x}{2} - \fracpart{x} + T(\fracpart{x}) =
 \frac{x}{2} + T(\fracpart{x}-1)
-(\#eq:integralfrac1)
 \end{multline}
+$$ {#eq-integralfrac1}
 
-
+$$
 \begin{multline}
 I_{2}(x) = 
 \int_0^x \fracpart{t} dt =
 \frac{\floor{x} + \fracpart{x}^{2}}{2} =
 \frac{x + \fracpart{x}^{2}-\fracpart{x}}{2}
-(\#eq:integralfrac2)
-\end{multline}
+\end{multline} 
+$$ {#eq-integralfrac2}
 
-Los resultados anteriores se pueden modificar empleando la relación
-entre ellas \@ref(eq:prop1).
+Los resultados anteriores se pueden modificar empleando la relación entre ellas
+véase @eq-prop1.
 
 #### Integral definida de la función techo
 
+$$
 \begin{multline}
 I_{3}(x) = 
 \int_{0}^{x}{\ceil{x} dt} =
 \ceil{x} (x-\ceil{x}) + T(\ceil{x})
-(\#eq:integraltecho1)
 \end{multline}
-
+$$ {#eq-integraltecho1}
 
 #### Integral definida de la parte entera al cuadrado
 
 ```{r echo=FALSE, fig.cap = 'Parte entera al cuadrado'}
-library(ggplot2)
-library(ggthemes)
 
 # Plot parameters
 alpha = 0.5
@@ -126,113 +127,115 @@ ggplot() +
 
 Para valores positivos de la variable, $x\geq 0$:
 
+$$
 \begin{multline}
 I_{4}(x)= \int_0^x \left\{{t}\right\}^2 dx =
 \int_0^{\floor{x}} \left\{{t}\right\}^2 dt +
 \int_{{\floor{x}}}^{x} \left\{{t}\right\}^2 dt
-(\#eq:integralfrac3)
 \end{multline}
+$$ {#eq-integralfrac3}
 
-La función $\fracpart{t}^2$ tiene un comportamiento periódico, por lo que los
-límites de integración se pueden reducir al primer periodo. Si $t \in [0,1]$
-entonces $\fracpart{t}^2$ equivale a $t^2$.
+La función $\fracpart{t}^2$ tiene un comportamiento periódico, por lo que los límites de integración se pueden reducir al primer periodo. Si $t \in [0,1]$ entonces $\fracpart{t}^2$ equivale a $t^2$.
 
-
+```{=tex}
 \begin{multline}
 I_{4}(x)= \int_0^x \left\{{t}\right\}^2 dx =
 \int_0^{\floor{x}} \left\{{t}\right\}^2 dt +
 \int_{{\floor{x}}}^{x} \left\{{t}\right\}^2 dt
 (\#eq:integralfrac4)
 \end{multline}
-
+```
+```{=tex}
 \begin{multline}
 I_4(x) = \floor{x} \int_{0}^{1} {\left\{{t}\right\}^2 dt} + \int_0^{\fracpart{x}}{\left\{{t}\right\}^2 dt} = 
 \floor{x} \int_{0}^{1}{t^2 dt} + 
 \int_0^{\fracpart{x}} {t^2 dt}
 (\#eq:integralfrac5)
 \end{multline}
-
-
+```
+```{=tex}
 \begin{multline}
 I_{4}(x) = \int_0^x \left\{{t}\right\}^2 dt =
 \frac{ \floor{x} + \fracpart{x}^3}{3} =
 \frac{x + \fracpart{x}^{3}-\fracpart{x}}{3}
 (\#eq:integralfrac6)
 \end{multline}
-
-
+```
 #### Integral definida de la parte entera a la potencia $n$
 
-Empleando el mismo método de cálculo se puede generalizar la fórmula
-\@ref(eq:integralfrac6) para obtener la integral indefinida de la parte entera
-de un número elevado a cualquier potencia entera.
+Empleando el mismo método de cálculo se puede generalizar la fórmula \@ref(eq:integralfrac6) para obtener la integral indefinida de la parte entera de un número elevado a cualquier potencia entera.
 
-
+```{=tex}
 \begin{multline}
 I_{5}(x) = \int_0^x \left\{{t}\right\}^n dt =
 \frac{\floor{x} + \fracpart{x}^{n+1}}{n+1} =
 \frac{x + \fracpart{x}^{n+1}-\fracpart{x}}{n+1}
 (\#eq:integralfrac8)
 \end{multline}
-
+```
 #### Integral definida de la función suelo al cuadrado
 
+```{=tex}
 \begin{multline}
 I_{6}(x) = \int_{0}^{x}{\floor{t}^2 dt} =
 \int_{0}^{\floor{x}}{\floor{t}^2 dt} 
 + \int_{{\floor{x}}}^{x}{\floor{t}^2 dt}
 (\#eq:integralsuelo2a)
 \end{multline}
-
+```
+```{=tex}
 \begin{multline}
 I_{6}(x) =\sum_{k=1}^{\floor{x} - 1}{k^2} +
 \fracpart{x}\floor{x}^2 
 (\#eq:integralsuelo2b)
 \end{multline}
-
-
+```
+```{=tex}
 \begin{multline}
 I_{6}(x) = 
 P(\floor{x} - 1) + \fracpart{x} \floor{x}^2
 (\#eq:integralsuelo2c)
 \end{multline}
-
-
+```
 Dónde $P(n)$ es el enésimo *Número Piramidal de Base Cuadrada*, secuencia [A000330](https://oeis.org/A000330)
 
+```{=tex}
 \begin{multline}
 P(n) =\frac{n(n+1)(2n+1)}{6}
 (\#eq:piramidal)
 \end{multline}
-
+```
+```{=tex}
 \begin{multline}
 I_{6}(x) = \int_{0}^{x}{\floor{t}^2 dt} = 
 \frac{\floor{x}  \left(6 \floor{x} \fracpart{x} +
 2 \floor{x}^{2} - 3 \floor{x} + 1 \right)}{6}
 (\#eq:integralsuelo2d)
 \end{multline}
-
+```
 #### Integral definida de la función suelo a la potencia $n$
 
-
+```{=tex}
 \begin{multline}
 I_{7}(x)= \int_{0}^{x}{\floor{t}^{n} dt } =
 \sum_{k=1}^{\floor{x} - 1}{k^n} + \fracpart{x}\floor{x}^n
 (\#eq:integralnsuelo1)
 \end{multline}
-
+```
+```{=tex}
 \begin{multline}
 S(n,m)=\sum_{k=1}^{m}{k^n}
 (\#eq:faulhaber)
 \end{multline}
-
+```
+```{=tex}
 \begin{multline}
 I_{7}(x) = \int_0^x \floor{t}^n dt =
 S(n, \floor{x} - 1) +
 \fracpart{x}\floor{x}^n
 (\#eq:integralnsuelo2)
 \end{multline}
-
+```
 If $latex \displaystyle n=1$ , the formula gives the Triangular Numbers.
 
 And if $latex \displaystyle n=2$ , the formula gives the Square Pyramidal Numbers.
@@ -266,46 +269,48 @@ ggplot() +
   theme(axis.title.y=element_blank())
 ```
 
+```{=tex}
 \begin{multline}
 I_{8}(x) = \int_0^x \floor{t} \fracpart{t} dt
 (\#eq:integralfunc1)
 \end{multline}
-
+```
+```{=tex}
 \begin{multline}
 t^2=(\floor{t} + \fracpart{t})^2 =
 {\floor{t}}^{2} + 2 \floor{t} \fracpart{t} + \fracpart{t}^2 
 (\#eq:intsuelo1)
 \end{multline}
-
-
+```
+```{=tex}
 \begin{multline}
 \floor{t} \fracpart{t} = 
 \frac{1}{2}(t^2 - \fracpart{t}^2 - \floor{t}^{2})
 (\#eq:intsuelo2)
 \end{multline}
+```
+Sustituyendo los resultados anteriores: \@ref(eq:intsuelo2), \@ref(eq:integralfrac6) y \@ref(eq:integralsuelo2d) en \@ref(eq:integralfunc1)
 
-Sustituyendo los resultados anteriores: \@ref(eq:intsuelo2),
-\@ref(eq:integralfrac6) y \@ref(eq:integralsuelo2d) en \@ref(eq:integralfunc1)
-
+```{=tex}
 \begin{multline}
 I_{8}(x)=\frac{1}{2} ( \frac{x^3}{3} - I_{4}(x) - I_{6}(x))
 (\#eq:intsuelo3)
 \end{multline}
-
-
+```
+```{=tex}
 \begin{multline}
 I_{8}(x) = \frac{1}{2} (\floor{x} \fracpart{x}^{2} +
 \frac{{\floor{x}}^{2} - \floor{x}}{2})
 (\#eq:intsuelo4)
 \end{multline}
-
-
+```
+```{=tex}
 \begin{multline}
 I_{8}(x) = \int_{0}^{x}{\floor{t} \fracpart{t} dt} =
 \frac{1}{2} ( \floor{x} \fracpart{x}^2 + \frac{{\floor{x}}^{2} - \floor{x}}{2})
 (\#eq:intsuelo5)
 \end{multline}
-
+```
 #### Integral definida del producto de las funciones suelo y techo
 
 ```{r echo=FALSE, fig.cap = 'Producto de las funciones suelo y techo'}
@@ -336,13 +341,17 @@ ggplot() +
   theme(axis.title.y=element_blank())
 ```
 
+```{=tex}
 \begin{multline}
 I_{9}(x) = \int_{0}^{x}{\floor{t} \ceil{t} dt}
 (\#eq:integralfunc3)
 \end{multline}
+```
+La función[^index-1] $f(t) = \floor{t} \ceil{t}$ tiene una *discontinuidad de primer orden* en cada $f(n)$ si $n \in \mathbb{Z}$ y $n \neq 0$, si calculamos los límites laterales para un valor entero cualquiera, vemos que:
 
-La función^[La función $f(t) = \floor{t} \ceil{t}$, es simétrica respecto a origen $f(-t)=f(t)$] $f(t) = \floor{t} \ceil{t}$ tiene una *discontinuidad de primer orden* en cada $f(n)$ si $n \in \mathbb{Z}$ y $n \neq 0$, si calculamos los límites laterales para un valor entero cualquiera, vemos que: 
+[^index-1]: La función $f(t) = \floor{t} \ceil{t}$, es simétrica respecto a origen $f(-t)=f(t)$
 
+```{=tex}
 \begin{multline}
 \left\{
 \begin{array}{l}
@@ -353,62 +362,72 @@ La función^[La función $f(t) = \floor{t} \ceil{t}$, es simétrica respecto a o
 \right.
 (\#eq:limits1)
 \end{multline}
+```
+Los límites laterales[^index-2] son distintos en cada valor entero de la variable $t$, salvo en el caso $t=0$.
 
-Los límites laterales^[Están relacionados con los *números oblongos*, secuencia: [A002378](https://oeis.org/A002378)] son distintos en cada valor entero de la variable $t$, salvo en el caso $t=0$.
+[^index-2]: Están relacionados con los *números oblongos*, secuencia: [A002378](https://oeis.org/A002378)
 
+```{=tex}
 \begin{multline}
 \lim_{t \to n^{+}}{f(t)} \neq \lim_{t \to n^{-}}{f(t)}, n \in \mathbb{Z}-\{0\}
 (\#eq:limits2)
 \end{multline}
-
-
+```
+```{=tex}
 \begin{multline}
 I_{9}(x) = \int_{0}^{x}{\floor{t} \ceil{t} dt} =
 \sum_{n=1}^{\floor{x}-1}{n(n+1)} +
 \int_{\floor{x}}^{x}{\floor{t} \ceil{t} dt}
 (\#eq:integralfunc4)
 \end{multline}
-
+```
+```{=tex}
 \begin{multline}
 I_{9}(x) = 
 \sum_{n=1}^{\floor{x}-1}{n(n+1)} +
 \floor{x} \ceil{x} (x-\floor{x}) =
 (\#eq:integralfunc5)
 \end{multline}
-
+```
+```{=tex}
 \begin{multline}
 I_{9}(x) = 
 \frac{1}{3} (\floor{x}-1)\floor{x}(\floor{x}-1) + 
 \floor{x} \ceil{x} \fracpart{x}
 (\#eq:integralfunc6)
 \end{multline}
-
+```
+```{=tex}
 \begin{multline}
 I_{9}(x) = \int_0^x \floor{t} \ceil{t} dt =
 \floor{x} \bigg(\frac{\floor{x}^2-1}{3} + \ceil{x} \fracpart{x}\bigg)
 (\#eq:integralfunc7)
 \end{multline}
-
+```
 Otra forma alternativa de calcular la integral $I_{9}(x)$ es sustituir $f(t) = \floor{t} \ceil{t}$ por la función $g(t) = \floor{t}^2 + \floor{t}$ que aunque difiere de $f(x)$ para valores enteros, salvo $t=0$, las integrales coinciden ya que el conjunto de estas diferencias tienen una medida nula.
 
 Por lo que, utilizando los resultados \@ref(eq:integralsuelo1) y \@ref(eq:integralsuelo2b):
 
-
+```{=tex}
 \begin{multline}
 I_{9}(x) = \int_0^x \floor{t} \ceil{t} dt =
 \int_{0}^{x}{(\floor{t}^{2} + \floor{t}) dt} =
 I_{6}(x) + I_{1}(x)
 (\#eq:integralfunc8)
 \end{multline}
-
+```
+```{=tex}
 \begin{multline}
 I_{9}(x) = \int_0^x \floor{t} \ceil{t} dt =
 \frac{1}{3} \floor{x} (1 + \floor{x}) (-1 + \floor{x} + 3\fracpart{x})
 (\#eq:integralfunc9)
 \end{multline}
-
-* Código para _Wolfram Mathematica_^[Si simplificamos $I_{6}(x) + I_{1}(x) - I_{9}(x)$ obtenemos $\floor{x}\fracpart{x}(1 - \ceil{x} + \floor{x})$ que podemos comprobar que es $0$ para cualquier valor de $x$]:
 ```
+-   Código para *Wolfram Mathematica*[^index-3]:
+
+[^index-3]: Si simplificamos $I_{6}(x) + I_{1}(x) - I_{9}(x)$ obtenemos $\floor{x}\fracpart{x}(1 - \ceil{x} + \floor{x})$ que podemos comprobar que es $0$ para cualquier valor de $x$
+
+```         
 P[n_] := n*(n + 1)*(2 n + 1)/6
 T[n_] := n*(n + 1)/2
 I6[x_] := P[Floor[x] - 1] + FractionalPart[x]*(Floor[x]^2)
@@ -418,37 +437,40 @@ Simplify[I6[x] + I1[x]]
 
 #### Integral definida de la función suelo del cuadrado
 
+```{=tex}
 \begin{multline}
 I_{10}(x) = \int_0^x \floor{t^2} dt
 (\#eq:integral2suelo1)
 \end{multline}
-
+```
 Observaciones:
 
- * La función $f(t)=\floor{t^2}$ tiene una  *discontinuidad de primer orden* en cada $f(\sqrt{n})$ para todo $n \in \mathbb{Z}$ y $n \neq 0$
- 
- * $f(t)$ es constante en el intervalo $[\sqrt(n), \sqrt(n+1)]$ para cualquier $n$ entero, por lo que la integral definida en este intervalo equivale al área del rectángulo de base $\sqrt{n+1} - \sqrt{n}$ y altura $n$
- 
- \begin{multline}
+-   La función $f(t)=\floor{t^2}$ tiene una *discontinuidad de primer orden* en cada $f(\sqrt{n})$ para todo $n \in \mathbb{Z}$ y $n \neq 0$
+
+-   $f(t)$ es constante en el intervalo $[\sqrt(n), \sqrt(n+1)]$ para cualquier $n$ entero, por lo que la integral definida en este intervalo equivale al área del rectángulo de base $\sqrt{n+1} - \sqrt{n}$ y altura $n$
+
+```{=tex}
+\begin{multline}
 \int_{\sqrt{n}}^{\sqrt{n+1}} \floor{t^2} dt =
 n (\sqrt{n+1} - \sqrt{n})
 (\#eq:integral2suelo2)
 \end{multline}
-
-
+```
+```{=tex}
 \begin{multline}
 \int_{\sqrt{n}}^{\sqrt{n+1}} \floor{t^2} dt =
 n (\sqrt{n+1} - \sqrt{n})
 (\#eq:integral2suelo3)
 \end{multline}
-
+```
+```{=tex}
 \begin{multline}
 I_{10}(x) = \sum_{n=0}^{\sqrt{\floor{x^2}}}{\int_{\sqrt{n}}^{\sqrt{n+1}}{ \floor{t^2} dt}}  
 +  \int_{\sqrt{\floor{x^2}}}^{x}{\floor{t^2} dt} = 
 n (\sqrt{n+1} - \sqrt{n}) + x (x - \sqrt{\floor{x^2}})
 (\#eq:integral2suelo4)
 \end{multline}
-
+```
 ### Ejercicios de Integración de funciones de redondeo
 
 ### Sumas y series.
