@@ -137,66 +137,71 @@ $$ {#eq-integralfrac3}
 
 La función $\fracpart{t}^2$ tiene un comportamiento periódico, por lo que los límites de integración se pueden reducir al primer periodo. Si $t \in [0,1]$ entonces $\fracpart{t}^2$ equivale a $t^2$.
 
-```{=tex}
+$$
 \begin{multline}
 I_{4}(x)= \int_0^x \left\{{t}\right\}^2 dx =
 \int_0^{\floor{x}} \left\{{t}\right\}^2 dt +
 \int_{{\floor{x}}}^{x} \left\{{t}\right\}^2 dt
-(\#eq:integralfrac4)
 \end{multline}
-```
-```{=tex}
+$$ {#eq-integralfrac4}
+
+$$
 \begin{multline}
-I_4(x) = \floor{x} \int_{0}^{1} {\left\{{t}\right\}^2 dt} + \int_0^{\fracpart{x}}{\left\{{t}\right\}^2 dt} = 
+I_4(x) =
+\floor{x} \int_{0}^{1} {\left\{{t}\right\}^2 dt} +
+\int_0^{\fracpart{x}}{\left\{{t}\right\}^2 dt} = 
 \floor{x} \int_{0}^{1}{t^2 dt} + 
 \int_0^{\fracpart{x}} {t^2 dt}
-(\#eq:integralfrac5)
 \end{multline}
-```
-```{=tex}
+$$ {#eq-integralfrac5}
+
+
+$$
 \begin{multline}
 I_{4}(x) = \int_0^x \left\{{t}\right\}^2 dt =
 \frac{ \floor{x} + \fracpart{x}^3}{3} =
 \frac{x + \fracpart{x}^{3}-\fracpart{x}}{3}
-(\#eq:integralfrac6)
 \end{multline}
-```
+$$ {#eq-integralfrac6}
+
 #### Integral definida de la parte entera a la potencia $n$
 
-Empleando el mismo método de cálculo se puede generalizar la fórmula \@ref(eq:integralfrac6) para obtener la integral indefinida de la parte entera de un número elevado a cualquier potencia entera.
+Empleando el mismo método de cálculo se puede generalizar la fórmula
+@eq-integralfrac6 para obtener la integral indefinida de la parte entera de un
+número elevado a cualquier potencia entera.
 
-```{=tex}
+$$
 \begin{multline}
 I_{5}(x) = \int_0^x \left\{{t}\right\}^n dt =
 \frac{\floor{x} + \fracpart{x}^{n+1}}{n+1} =
 \frac{x + \fracpart{x}^{n+1}-\fracpart{x}}{n+1}
-(\#eq:integralfrac8)
 \end{multline}
-```
+$$ {#eq-integralfrac8}
+
 #### Integral definida de la función suelo al cuadrado
 
-```{=tex}
+$$
 \begin{multline}
 I_{6}(x) = \int_{0}^{x}{\floor{t}^2 dt} =
 \int_{0}^{\floor{x}}{\floor{t}^2 dt} 
 + \int_{{\floor{x}}}^{x}{\floor{t}^2 dt}
-(\#eq:integralsuelo2a)
 \end{multline}
-```
-```{=tex}
+$$ {#eq-integralsuelo2a}
+
+$$
 \begin{multline}
 I_{6}(x) =\sum_{k=1}^{\floor{x} - 1}{k^2} +
 \fracpart{x}\floor{x}^2 
-(\#eq:integralsuelo2b)
 \end{multline}
-```
-```{=tex}
+$$ {#eq-integralsuelo2b}
+
+$$
 \begin{multline}
 I_{6}(x) = 
 P(\floor{x} - 1) + \fracpart{x} \floor{x}^2
-(\#eq:integralsuelo2c)
 \end{multline}
-```
+$$ {#eq-integralsuelo2c}
+
 Dónde $P(n)$ es el enésimo *Número Piramidal de Base Cuadrada*, secuencia [A000330](https://oeis.org/A000330)
 
 ```{=tex}
