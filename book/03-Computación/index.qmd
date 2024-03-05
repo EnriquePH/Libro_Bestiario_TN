@@ -204,46 +204,47 @@ $$ {#eq-integralsuelo2c}
 
 Dónde $P(n)$ es el enésimo *Número Piramidal de Base Cuadrada*, secuencia [A000330](https://oeis.org/A000330)
 
-```{=tex}
+$$
 \begin{multline}
 P(n) =\frac{n(n+1)(2n+1)}{6}
-(\#eq:piramidal)
 \end{multline}
-```
-```{=tex}
+$$ {#eq-piramidal}
+
+
+$$
 \begin{multline}
 I_{6}(x) = \int_{0}^{x}{\floor{t}^2 dt} = 
 \frac{\floor{x}  \left(6 \floor{x} \fracpart{x} +
 2 \floor{x}^{2} - 3 \floor{x} + 1 \right)}{6}
-(\#eq:integralsuelo2d)
 \end{multline}
-```
+$$ {#eq-integralsuelo2d)}
+
 #### Integral definida de la función suelo a la potencia $n$
 
-```{=tex}
+$$
 \begin{multline}
 I_{7}(x)= \int_{0}^{x}{\floor{t}^{n} dt } =
 \sum_{k=1}^{\floor{x} - 1}{k^n} + \fracpart{x}\floor{x}^n
-(\#eq:integralnsuelo1)
 \end{multline}
-```
-```{=tex}
+$$ {#eq-integralnsuelo1}
+
+$$
 \begin{multline}
 S(n,m)=\sum_{k=1}^{m}{k^n}
-(\#eq:faulhaber)
 \end{multline}
-```
-```{=tex}
+$$ {#eq-faulhaber}
+
+$$
 \begin{multline}
 I_{7}(x) = \int_0^x \floor{t}^n dt =
 S(n, \floor{x} - 1) +
 \fracpart{x}\floor{x}^n
-(\#eq:integralnsuelo2)
 \end{multline}
-```
-If $latex \displaystyle n=1$ , the formula gives the Triangular Numbers.
+$$ {#eq-integralnsuelo2}
 
-And if $latex \displaystyle n=2$ , the formula gives the Square Pyramidal Numbers.
+If $n=1$ , the formula gives the Triangular Numbers.
+
+And if $n=2$ , the formula gives the Square Pyramidal Numbers.
 
 #### Integral definida del producto de la función suelo y la parte entera
 
@@ -274,48 +275,49 @@ ggplot() +
   theme(axis.title.y=element_blank())
 ```
 
-```{=tex}
+$$
 \begin{multline}
 I_{8}(x) = \int_0^x \floor{t} \fracpart{t} dt
-(\#eq:integralfunc1)
 \end{multline}
-```
-```{=tex}
+$$ {#eq-integralfunc1}
+
+$$
 \begin{multline}
 t^2=(\floor{t} + \fracpart{t})^2 =
-{\floor{t}}^{2} + 2 \floor{t} \fracpart{t} + \fracpart{t}^2 
-(\#eq:intsuelo1)
+{\floor{t}}^{2} + 2 \floor{t} \fracpart{t} + \fracpart{t}^2
 \end{multline}
-```
-```{=tex}
+$$ {#eq-intsuelo1}
+
+$$
 \begin{multline}
 \floor{t} \fracpart{t} = 
 \frac{1}{2}(t^2 - \fracpart{t}^2 - \floor{t}^{2})
-(\#eq:intsuelo2)
 \end{multline}
-```
-Sustituyendo los resultados anteriores: \@ref(eq:intsuelo2), \@ref(eq:integralfrac6) y \@ref(eq:integralsuelo2d) en \@ref(eq:integralfunc1)
+$$ {#eq-intsuelo2}
 
-```{=tex}
+Sustituyendo los resultados anteriores: @eq-intsuelo2, @eq-integralfrac6 y @eq-integralsuelo2d en @eq-integralfunc1.
+
+$$
 \begin{multline}
 I_{8}(x)=\frac{1}{2} ( \frac{x^3}{3} - I_{4}(x) - I_{6}(x))
-(\#eq:intsuelo3)
 \end{multline}
-```
-```{=tex}
+$$ {#eq-intsuelo3}
+
+$$
 \begin{multline}
 I_{8}(x) = \frac{1}{2} (\floor{x} \fracpart{x}^{2} +
 \frac{{\floor{x}}^{2} - \floor{x}}{2})
 (\#eq:intsuelo4)
 \end{multline}
-```
-```{=tex}
+$$ {#eq-intsuelo4}
+
+$$
 \begin{multline}
 I_{8}(x) = \int_{0}^{x}{\floor{t} \fracpart{t} dt} =
 \frac{1}{2} ( \floor{x} \fracpart{x}^2 + \frac{{\floor{x}}^{2} - \floor{x}}{2})
-(\#eq:intsuelo5)
 \end{multline}
-```
+$$ {#eq-intsuelo5}
+
 #### Integral definida del producto de las funciones suelo y techo
 
 ```{r echo=FALSE, fig.cap = 'Producto de las funciones suelo y techo'}
@@ -346,17 +348,17 @@ ggplot() +
   theme(axis.title.y=element_blank())
 ```
 
-```{=tex}
+$$
 \begin{multline}
 I_{9}(x) = \int_{0}^{x}{\floor{t} \ceil{t} dt}
-(\#eq:integralfunc3)
 \end{multline}
-```
+$$ {#eq-integralfunc3}
+
 La función[^index-1] $f(t) = \floor{t} \ceil{t}$ tiene una *discontinuidad de primer orden* en cada $f(n)$ si $n \in \mathbb{Z}$ y $n \neq 0$, si calculamos los límites laterales para un valor entero cualquiera, vemos que:
 
 [^index-1]: La función $f(t) = \floor{t} \ceil{t}$, es simétrica respecto a origen $f(-t)=f(t)$
 
-```{=tex}
+$$
 \begin{multline}
 \left\{
 \begin{array}{l}
@@ -365,19 +367,19 @@ La función[^index-1] $f(t) = \floor{t} \ceil{t}$ tiene una *discontinuidad de p
   \quad f(n) = n^2 (n \in \mathbb{Z})
 \end{array}
 \right.
-(\#eq:limits1)
 \end{multline}
-```
+$$ {#eq-limits1}
+
 Los límites laterales[^index-2] son distintos en cada valor entero de la variable $t$, salvo en el caso $t=0$.
 
 [^index-2]: Están relacionados con los *números oblongos*, secuencia: [A002378](https://oeis.org/A002378)
 
-```{=tex}
+$$
 \begin{multline}
 \lim_{t \to n^{+}}{f(t)} \neq \lim_{t \to n^{-}}{f(t)}, n \in \mathbb{Z}-\{0\}
-(\#eq:limits2)
 \end{multline}
-```
+$$ {#eq-limits2}
+
 ```{=tex}
 \begin{multline}
 I_{9}(x) = \int_{0}^{x}{\floor{t} \ceil{t} dt} =
@@ -386,6 +388,7 @@ I_{9}(x) = \int_{0}^{x}{\floor{t} \ceil{t} dt} =
 (\#eq:integralfunc4)
 \end{multline}
 ```
+
 ```{=tex}
 \begin{multline}
 I_{9}(x) = 
