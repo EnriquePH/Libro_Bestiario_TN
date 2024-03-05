@@ -23,9 +23,9 @@ Suelo, Techo y Parte Fraccionaria.
 ### Propiedades
 
 $$
-\begin{multline}
+\begin{align}
 x =  \floor{x} + \fracpart{x}
-\end{multline}
+\end{align}
 $$ {#eq-prop1}
 
 ### Integración
@@ -43,12 +43,11 @@ $$ {#eq-triang}
 #### Integral definida de la función suelo
 
 $$
-\begin{multline}
-I_{1}(x) = 
-\int_0^{x}{\floor{t} dt} =
-\floor{x} \fracpart{x} + \frac{\floor{x}^2 - \floor{x}}{2} =
+\begin{align}
+I_{1}(x) = \int_0^{x}{\floor{t} dt} =
+\floor{x} \fracpart{x} + \frac{\floor{x}^2 - \floor{x}}{2} = 
 \fracpart{x}\floor{x} + T(\floor{x} - 1)
-\end{multline}
+\end{align}
 $$ {#eq-integralsuelo1}
 
 #### Integral definida de la función parte fraccionaria
@@ -307,7 +306,6 @@ $$
 \begin{multline}
 I_{8}(x) = \frac{1}{2} (\floor{x} \fracpart{x}^{2} +
 \frac{{\floor{x}}^{2} - \floor{x}}{2})
-(\#eq:intsuelo4)
 \end{multline}
 $$ {#eq-intsuelo4}
 
@@ -380,57 +378,56 @@ $$
 \end{multline}
 $$ {#eq-limits2}
 
-```{=tex}
+$$
 \begin{multline}
 I_{9}(x) = \int_{0}^{x}{\floor{t} \ceil{t} dt} =
 \sum_{n=1}^{\floor{x}-1}{n(n+1)} +
 \int_{\floor{x}}^{x}{\floor{t} \ceil{t} dt}
-(\#eq:integralfunc4)
 \end{multline}
-```
+$$ {#eq-integralfunc4)}
 
-```{=tex}
+$$
 \begin{multline}
 I_{9}(x) = 
 \sum_{n=1}^{\floor{x}-1}{n(n+1)} +
 \floor{x} \ceil{x} (x-\floor{x}) =
-(\#eq:integralfunc5)
 \end{multline}
-```
-```{=tex}
+$$ {#eq-integralfunc5}
+
+$$
 \begin{multline}
 I_{9}(x) = 
 \frac{1}{3} (\floor{x}-1)\floor{x}(\floor{x}-1) + 
 \floor{x} \ceil{x} \fracpart{x}
-(\#eq:integralfunc6)
 \end{multline}
-```
-```{=tex}
+$$ {#eq-integralfunc6}
+
+$$
 \begin{multline}
 I_{9}(x) = \int_0^x \floor{t} \ceil{t} dt =
 \floor{x} \bigg(\frac{\floor{x}^2-1}{3} + \ceil{x} \fracpart{x}\bigg)
-(\#eq:integralfunc7)
 \end{multline}
-```
+$$ {#eq-integralfunc7}
+
 Otra forma alternativa de calcular la integral $I_{9}(x)$ es sustituir $f(t) = \floor{t} \ceil{t}$ por la función $g(t) = \floor{t}^2 + \floor{t}$ que aunque difiere de $f(x)$ para valores enteros, salvo $t=0$, las integrales coinciden ya que el conjunto de estas diferencias tienen una medida nula.
 
-Por lo que, utilizando los resultados \@ref(eq:integralsuelo1) y \@ref(eq:integralsuelo2b):
+Por lo que, utilizando los resultados @eq-integralsuelo1 y @eq-integralsuelo2b:
 
-```{=tex}
+$$
 \begin{multline}
 I_{9}(x) = \int_0^x \floor{t} \ceil{t} dt =
 \int_{0}^{x}{(\floor{t}^{2} + \floor{t}) dt} =
 I_{6}(x) + I_{1}(x)
-(\#eq:integralfunc8)
 \end{multline}
-```
-```{=tex}
+$$ {#eq-integralfunc8}
+
+$$
 \begin{multline}
 I_{9}(x) = \int_0^x \floor{t} \ceil{t} dt =
 \frac{1}{3} \floor{x} (1 + \floor{x}) (-1 + \floor{x} + 3\fracpart{x})
-(\#eq:integralfunc9)
 \end{multline}
-```
+$$ {#eq-integralfunc9}
+
 -   Código para *Wolfram Mathematica*[^index-3]:
 
 [^index-3]: Si simplificamos $I_{6}(x) + I_{1}(x) - I_{9}(x)$ obtenemos $\floor{x}\fracpart{x}(1 - \ceil{x} + \floor{x})$ que podemos comprobar que es $0$ para cualquier valor de $x$
@@ -445,40 +442,40 @@ Simplify[I6[x] + I1[x]]
 
 #### Integral definida de la función suelo del cuadrado
 
-```{=tex}
+$$
 \begin{multline}
 I_{10}(x) = \int_0^x \floor{t^2} dt
-(\#eq:integral2suelo1)
 \end{multline}
-```
+$$ {#eq-integral2suelo1)}
+
 Observaciones:
 
 -   La función $f(t)=\floor{t^2}$ tiene una *discontinuidad de primer orden* en cada $f(\sqrt{n})$ para todo $n \in \mathbb{Z}$ y $n \neq 0$
 
 -   $f(t)$ es constante en el intervalo $[\sqrt(n), \sqrt(n+1)]$ para cualquier $n$ entero, por lo que la integral definida en este intervalo equivale al área del rectángulo de base $\sqrt{n+1} - \sqrt{n}$ y altura $n$
 
-```{=tex}
+$$
 \begin{multline}
 \int_{\sqrt{n}}^{\sqrt{n+1}} \floor{t^2} dt =
 n (\sqrt{n+1} - \sqrt{n})
-(\#eq:integral2suelo2)
 \end{multline}
-```
-```{=tex}
+$$ {#eq-integral2suelo2}
+
+$$
 \begin{multline}
 \int_{\sqrt{n}}^{\sqrt{n+1}} \floor{t^2} dt =
 n (\sqrt{n+1} - \sqrt{n})
-(\#eq:integral2suelo3)
 \end{multline}
-```
-```{=tex}
+$$ {#eq-integral2suelo3}
+
+$$
 \begin{multline}
 I_{10}(x) = \sum_{n=0}^{\sqrt{\floor{x^2}}}{\int_{\sqrt{n}}^{\sqrt{n+1}}{ \floor{t^2} dt}}  
 +  \int_{\sqrt{\floor{x^2}}}^{x}{\floor{t^2} dt} = 
 n (\sqrt{n+1} - \sqrt{n}) + x (x - \sqrt{\floor{x^2}})
-(\#eq:integral2suelo4)
 \end{multline}
-```
+$$ {#eq-integral2suelo4}
+
 ### Ejercicios de Integración de funciones de redondeo
 
 ### Sumas y series.
