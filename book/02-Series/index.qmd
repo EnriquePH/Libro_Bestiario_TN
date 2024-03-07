@@ -317,6 +317,7 @@ Sustituyendo en la serie problema, los valores obtenidos @eq-A000330-e, la expre
  (\#eq:A000330-f)
 \end{multline}
 ```
+
 Considerando las expresiones \@ref(eq:armonicos1), \@ref(eq:digamma1) y que cumple la función digamma $\psi_{0}$:
 
 Taking into account the expressions: (i),(iv) and (vi), for the digamma function:
