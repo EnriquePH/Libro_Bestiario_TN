@@ -58,19 +58,18 @@ $${#eq-A001844}
 
 Referencia a la ecuación @eq-A001844
 
-```{=tex}
+$$
 \begin{multline}
 \sum_{n=1}^{\infty}{\frac{1}{\left\lceil \frac{n^2}{2} \right\rceil}} =  \sum_{m=1}^{\infty}{\frac{1}{2m^2}}  + \sum_{m=0}^{\infty}{\frac{1}{2m(m+1) + 1}} 
-  (\#eq:A000982-c)
 \end{multline}
-```
+$$ {#eq-A000982-c}
 
-```{=tex}
+$$
 \begin{multline}
 \sum_{n=1}^{\infty}{\frac{1}{\left\lceil \frac{n^2}{2} \right\rceil}} =  \frac{\zeta(2)}{2} + \frac{\pi}{2} \cdot \tanh\left(\frac{\pi}{2}\right)
-  (\#eq:A000982-d)
 \end{multline}
-```
+$$ {#eq-A000982-d}
+
 ### Función suelo de $n^2$ tercios, [A000212](https://oeis.org/A000212)
 
 $$A000212 = \seq{0, 0, 1, 3, 5, 8, 12, 16, 21, 27, 33, 40, 48, 56, 65, 75}$$
@@ -146,12 +145,12 @@ $$
 $$ {#eq-A033428-a}
 
 
-```{=tex}
+$$
 \begin{multline}
 \sum_{m=1}^{\infty}{\frac{1}{3m^2}} = \frac{\zeta(2)}{3} = \frac{\pi^2}{18}
-  (\#eq:A033428-b)
 \end{multline}
-```
+$$ {#eq-A033428-b}
+
 
 $$
 \begin{multline}
@@ -162,7 +161,7 @@ $$ {#eq-A000212-c}
 
 -   Código para *Wolfram Mathematica*:
 
-```{verbatim}
+```mathematica
     S1 = Sum[1/(m*(3 m - 2)), {m, 1, Infinity}];
     S2 = Sum[1/(m*(3 m + 2)), {m, 1, Infinity}];
     S3 = Sum[1/(3*m^2), {m, 1, Infinity}];
@@ -174,16 +173,19 @@ $$ {#eq-A000212-c}
 
 [^index-1]: Anotaciones del 30/Jun/2013
 
-$$A002620 = \{0, 0, 1, 2, 4, 6, 9, 12, 16, 20, 25, 30, 36, 42, 49, 56,...\}$$ Se puede observar como los términos pares de la secuencia se corresponden a los cuadrados perfectos ([A000290](https://oeis.org/A000290)), mientras que los términos impares son los números oblongos ([A002378](https://oeis.org/A002378)).
+$$A002620 = \{0, 0, 1, 2, 4, 6, 9, 12, 16, 20, 25, 30, 36, 42, 49, 56,...\}$$ Se
+puede observar como los términos pares de la secuencia se corresponden a los
+cuadrados perfectos ([A000290](https://oeis.org/A000290)), mientras que los
+términos impares son los números oblongos ([A002378](https://oeis.org/A002378)).
 
-```{=tex}
+$$
 \begin{multline}
 A002620(n) = \left\lfloor \frac{n^2}{4} \right\rfloor = 
 \left\lfloor \frac{n^2}{2} \right\rfloor \cdot \left\lceil \frac{n^2}{2} \right\rceil
-  (\#eq:A002620-a)
 \end{multline}
-```
-```{=tex}
+$$ {#eq-A002620-a}
+
+$$
 \begin{multline}
 \!\begin{aligned}
 \sum_{n=2}^{\infty}{\frac{1}{A002620(n)}} & = \sum_{n=2}^{\infty}{\frac{1}{ \left\lfloor\frac{n^2}{4}\right\rfloor}} \\
@@ -191,115 +193,126 @@ A002620(n) = \left\lfloor \frac{n^2}{4} \right\rfloor =
 & = \zeta(2) + 1 \\
 & = \frac{\pi^2}{6} + 1
 \end{aligned}
-(\#eq:A002620-b)
 \end{multline}
-```
+$$ {#eq-A002620-b}
+
 ### Generalización
 
-```{=tex}
+$$
 \begin{multline}
 \begin{split}
 S(k) & =
 \sum_{n=\lceil \sqrt{k} \rceil}^{\infty}{\frac{1}{\left\lfloor\frac{n^2}{k}\right\rfloor}} \\
 & = \sum_{s=0}^{k-1}{\sum_{m=[{s}^{2} \lt k]}^{\infty}\frac{1}{\left\lfloor\frac{{(k m + s)}^{2}}{k}\right\rfloor}} \\
-
 & = \frac{\zeta(2)}{k} + \sum_{s=1}^{k-1}{\sum_{m=[s^2 \lt k]}^{\infty}\frac{1}{\left\lfloor\frac{{(k m + s)}^{2}}{k}\right\rfloor}}
 \end{split}
-(\#eq:gener)
 \end{multline}
-```
+$$ {#eq-gener}
+
 ## Series relacionadas con números figurativos
 
-Los **números figurativos** son números que pueden representarse como una disposición geométrica regular de puntos separados de forma idéntica. La disposición puede ser plana o tridimensional. Por ejemplo, sí la disposición de los puntos forma un **polígono regular** hablamos de **números poligonales**. También podemos estudiar disposiciones en forma de **polihédrica**, como puede ser piramidal, tetrehédrica, etc.
+Los **números figurativos** son números que pueden representarse como una
+disposición geométrica regular de puntos separados de forma idéntica. La
+disposición puede ser plana o tridimensional. Por ejemplo, sí la disposición de
+los puntos forma un **polígono regular** hablamos de **números poligonales**.
+También podemos estudiar disposiciones en forma de **polihédrica**, como puede
+ser piramidal, tetrahédrica, etc.
 
-Se listan, a continuación, varios ejemplos de sumas convergentes, tomando la suma infinita de los inversos de varios ejemplos de **números figurativos**.
+Se listan, a continuación, varios ejemplos de sumas convergentes, tomando la
+suma infinita de los inversos de varios ejemplos de **números figurativos**.
 
 ### Números Pentagonales, secuencia [A000326](https://oeis.org/A000326)
 
-```{=tex}
+$$
 \begin{multline}
 A000326(n) = \frac{n(3n-1)}{2}
-  (\#eq:A000326-a)
 \end{multline}
-```
-```{=tex}
+$$ {#eq-A000326-a}
+
+$$
 \begin{multline}
 \sum_{n=1}^{\infty}{\frac{1}{A000326(n)}} = 
 \sum_{n=1}^{\infty}{\frac{2}{n(3n-1)}} =
 \frac{1}{3} \left(9 \log (3)-\sqrt{3} \pi \right)
-  (\#eq:A000326-b)
 \end{multline}
-```
-Los dígitos de la expansión decimal, de la constante obtenida, de la suma de los recíprocos de los **números pentagonales** corresponde a la secuencia: [A244641](https://oeis.org/A244641)
+$$ {#eq-A000326-b}
+
+Los dígitos de la expansión decimal, de la constante obtenida, de la suma de los
+recíprocos de los **números pentagonales** corresponde a la secuencia:
+[A244641](https://oeis.org/A244641)
 
 -   Código para *Wolfram Mathematica*:
 
-```{verbatim}
+```mathematica
     A000326[n_] := n(3n-1)/2
     Sum[1/A000326[n], {n, 1, Infinity}]
 ```
 
 ### Números Hexagonales, secuencia [A000384](https://oeis.org/A000384)
 
-```{=tex}
+$$
 \begin{multline}
 A000384(n) = n(2n-1)
-  (\#eq:A000384-a)
 \end{multline}
-```
-```{=tex}
+$$ {#eq-A000384-a}
+
+$$
 \begin{multline}
 \sum_{n=1}^{\infty}{\frac{1}{A000384(n)}} = 
 \sum_{n=1}^{\infty}{\frac{1}{n(2n-1)}} = 
 2\log(2)
-  (\#eq:A000384-b)
 \end{multline}
-```
+$$ {#eq-A000384-b}
+
 La expansión decimal de $2\log(2)$ corresponde a la secuencia [A016627](https://oeis.org/A016627)
 
 -   Código para *Wolfram Mathematica*:
 
-```{verbatim}
+```mathematica
     A000384[n_] := n(2n-1)
     Sum[1/A000384[n], {n, 1, Infinity}]
 ```
 
 ### Números Piramidales de Base Cuadrada, secuencia [A000330](https://oeis.org/A000330)
 
-La secuencia [A000330](https://oeis.org/A000330) viene definida por la [fórmula de Faulhaber](https://mathworld.wolfram.com/FaulhabersFormula.html) para la suma de los $n$ primeros **cuadrados perfectos**.
+La secuencia [A000330](https://oeis.org/A000330) viene definida por la [fórmula
+de Faulhaber](https://mathworld.wolfram.com/FaulhabersFormula.html) para la suma
+de los $n$ primeros **cuadrados perfectos**.
 
-```{=tex}
+$$
 \begin{multline}
 A000330(n)=\sum_{k=1}^{n}{k^2}=\frac{n(n+1)(2n+1)}{6}
-  (\#eq:A000330-a)
 \end{multline}
-```
-Para calcular la **suma infinita** de los inversos de los **números piramidales de base cuadrada**:
+$$ {#eq-A000330-a}
 
-```{=tex}
+Para calcular la **suma infinita** de los inversos de los **números piramidales
+de base cuadrada**:
+
+$$
 \begin{multline}
    \sum_{k=1}^{\infty}{\frac{6}{k(k+1)(2k+1)}}
-  (\#eq:A000330-b)
 \end{multline}
-```
-Nos basamos en la **suma finita** de los $n$ primeros **números piramidales de base cuadrada** que es:
+$$ {#eq-A000330-b}
 
-```{=tex}
+Nos basamos en la **suma finita** de los $n$ primeros **números piramidales de
+base cuadrada** que es:
+
+$$
 \begin{multline}
    S(n)=\sum_{k=1}^{n}{\frac{6}{k(k+1)(2k+1)}}
-  (\#eq:A000330-c)
 \end{multline}
-```
+$$ {#eq-A000330-c}
+
 Separando la fracción principal en otras con denominador de grado uno en $k$:
 
-```{=tex}
+$$
 \begin{multline}
 \frac{S(n)}{6}=
 \sum_{k=1}^{n}{\frac{1}{k(k+1)(2k+1)}} =
 \sum_{k=1}^{n}{\frac{A}{k}+\frac{B}{k+1}+\frac{C}{2k+1}}
- (\#eq:A000330-d)
 \end{multline}
-```
+$$ {#eq-A000330-d}
+
 Y resolviendo el sistema de ecuaciones, se obtiene:
 
 ```{=tex}
@@ -308,7 +321,9 @@ A=1 ;\; B=1;\; C=-4;
  (\#eq:A000330-e)
 \end{multline}
 ```
-Sustituyendo en la serie problema, los valores obtenidos @eq-A000330-e, la expresión de los **números armónicos** \@ref(eq:armonicos1) y teniendo en cuenta la suma de la serie\@ref(eq:armonicos2):
+Sustituyendo en la serie problema, los valores obtenidos @eq-A000330-e, la
+expresión de los **números armónicos** @eq-armonicos1 y teniendo en cuenta la
+suma de la serie @eq-armonicos2:
 
 ```{=tex}
 \begin{multline}
@@ -318,7 +333,8 @@ Sustituyendo en la serie problema, los valores obtenidos @eq-A000330-e, la expre
 \end{multline}
 ```
 
-Considerando las expresiones \@ref(eq:armonicos1), \@ref(eq:digamma1) y que cumple la función digamma $\psi_{0}$:
+Considerando las expresiones @eq-armonicos1, @eq-digamma1 y que cumple la
+función digamma $\psi_{0}$:
 
 Taking into account the expressions: (i),(iv) and (vi), for the digamma function:
 
@@ -329,12 +345,14 @@ Taking into account the expressions: (i),(iv) and (vi), for the digamma function
  (\#eq:A000330-g)
 \end{multline}
 ```
+
 ```{=tex}
 \begin{multline}
 S(n) = 6(2\gamma+2\psi_{0}(n+1) -\frac{n}{n+1}-2(\psi_{0}(n+\frac{3}{2})+\gamma+2\log(2)-2))
  (\#eq:A000330-h)
 \end{multline}
 ```
+
 ```{=tex}
 \begin{multline}
 S(n)=6(2\psi_{0}(n+1)-2\psi_{0}(n+\frac{3}{2})-\frac{n}{n+1} -4\log(2)+4)
@@ -394,20 +412,20 @@ H_{n}=\sum_{k=1}^n {\frac{1}{k}}=\gamma+\psi_{0}(n+1)
 
 See [@Knopp1990TheoryAA]
 
-```{=tex}
+$$
 \begin{multline}
 \psi_{0}(n+\frac{1}{2}) = -\gamma-2\log(2)+2\sum_{k=1}^n{\frac{1}{2k-1}}
-(\#eq:digamma1)
 \end{multline}
-```
+$$ {#eq-digamma1}
+
 (v) La función *Digamma* cumple la propiedad:
 
-```{=tex}
+$$
 \begin{multline}
 \psi_{0}(z+1)= \psi_{0}(z)+\frac{1}{z}
-(\#eq:digamma2)
 \end{multline}
-```
+$$ {#eq-digamma2}
+
 (vi) Otra expresión alternativa para la [función digamma](https://mathworld.wolfram.com/DigammaFunction.html) para valores semi enteros:
 
 Utilizando las ecuaciones (iii), (iv) y (v):
@@ -421,6 +439,7 @@ Utilizando las ecuaciones (iii), (iv) y (v):
 (\#eq:digamma3)
 \end{multline}
 ```
+
 (vii) Límite de la función digamma para valores semi enteros:
 
 ```{=tex}
@@ -430,32 +449,34 @@ Utilizando las ecuaciones (iii), (iv) y (v):
 (\#eq:digamma4)
 \end{multline}
 ```
-```{=tex}
+
+$$
 \begin{multline}
 L_{1}(n)=\psi_{0}(n+1)-\psi_{0}(n+\frac{3}{2}) =
   2\log(2) + \sum_{k=1}^{n}{\frac{1}{k}}-2 \sum_{k=1}^{n}{\frac{1}{2k-1}} \\
-(\#eq:digamma5)
 \end{multline}
-```
-```{=tex}
+$$ {#eq-digamma5}
+
+$$
 \begin{multline}
 L_{1}(n)=2\log(2)-\sum_{k=1}^{n}{\frac{1}{k(2k-1)}}
-(\#eq:digamma6)
 \end{multline}
-```
-El límite de la serie \@ref(eq:digamma6) anterior se puede obtener las series infinitas de *Mercator-Mengoli* para el desarrollo de la constante $\log(2)$, véase \[3\]
+$$ {#eq-digamma6}
 
-```{=tex}
+El límite de la serie @eq-digamma6 anterior se puede obtener las series
+infinitas de *Mercator-Mengoli* para el desarrollo de la constante $\log(2)$,
+véase \[3\]
+
+$$
 \begin{multline}
 \log(2)=\sum_{k=1}^{\infty}{\frac{1}{2k(2k-1)}}
-(\#eq:mercator1)
 \end{multline}
-```
+$$ {#eq-mercator1}
+
 Y calculando el límite:
 
-```{=tex}
+$$
 \begin{multline}
 L_{1}(\infty)=0
-(\#eq:mercator2)
 \end{multline}
-```
+$$ {#eq-mercator2}

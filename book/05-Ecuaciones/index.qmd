@@ -39,7 +39,7 @@ $$
 $${#eq-prueba}
 
 
-Referencia a una equación de prueba @eq-prueba
+Referencia a una ecuación de prueba @eq-prueba
 
 ## Ecuación $\varphi(n) = \varphi(n + k)$
 

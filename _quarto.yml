@@ -29,5 +29,4 @@ crossref:
   tbl-title: Tabla
   fig-title: Figura
   eq-title: Ecuación
-  eq-prefix: Ecuación
-
+  eq-prefix: ""

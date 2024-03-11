@@ -432,7 +432,7 @@ $$ {#eq-integralfunc9}
 
 [^index-3]: Si simplificamos $I_{6}(x) + I_{1}(x) - I_{9}(x)$ obtenemos $\floor{x}\fracpart{x}(1 - \ceil{x} + \floor{x})$ que podemos comprobar que es $0$ para cualquier valor de $x$
 
-```         
+```mathematica         
 P[n_] := n*(n + 1)*(2 n + 1)/6
 T[n_] := n*(n + 1)/2
 I6[x_] := P[Floor[x] - 1] + FractionalPart[x]*(Floor[x]^2)
